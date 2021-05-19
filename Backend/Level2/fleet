@@ -1,0 +1,17 @@
+#!/usr/bin/env php
+<?php
+
+require __DIR__.'/vendor/autoload.php';
+
+use Symfony\Component\Console\Application;
+use UI\Command\CreateFleetCommand;
+use UI\Command\LocalizeVehiculeCommand;
+use UI\Command\RegisterVehiculeCommand;
+
+$application = new Application();
+
+$application->add(new CreateFleetCommand());
+$application->add(new RegisterVehiculeCommand());
+$application->add(new LocalizeVehiculeCommand());
+
+$application->run();
